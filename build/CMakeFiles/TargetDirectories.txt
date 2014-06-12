@@ -1,0 +1,15 @@
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/ROSBUILD_genmsg_cpp.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/ROSBUILD_genmsg_lisp.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/ROSBUILD_gensrv_cpp.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/ROSBUILD_gensrv_lisp.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/clean-test-results.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/rosbuild_precompile.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/rosbuild_premsgsrvgen.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/rospack_genmsg.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/rospack_genmsg_libexe.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/rospack_gensrv.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/test.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/test-future.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/test-results.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/test-results-run.dir
+/home/caris/Ben/liclipse_ws/WAMPy/build/CMakeFiles/tests.dir
