@@ -87,7 +87,7 @@ def create_joint_trajectory(start_position, end_position,
     return trajectory, vel_lims
 
 
-def send_joint_trajectory(trajectory, velocities, frequency=250):
+def send_joint_trajectory(trajectory, velocities, frequency=500):
     """
     This is used to send a trajectory to the WAM arm at a given frequency.
 
