@@ -240,7 +240,7 @@ if __name__ == "__main__":
     # # Now it's ready to accept commands.
     # # To make it so that you can move it by hand, in a separate terminal:
     # # "rosservice call /wam/hold_joint_pos false"
-    # # Now move it to wherever you're interested in (ie a bolt, or a bolt drop off)
+    # # Now move it to wherever you're interested in (e.g. a part pickup or a part drop off)
     # # and you can get the joint coordinates by typing
     # # "rostopic echo /wam/joint_states"
     ## (or by running the function get_wam_joint_coordinates)
