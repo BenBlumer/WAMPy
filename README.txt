@@ -35,11 +35,13 @@ Installation:
 1) Install ROS (ros.org). Note: you may need to install the older version, Fuerte. This is recomended by BarrettRosPkg.
 2) Install the BarrettRos package (http://support.barrett.com/wiki/WAM/InstallBarrettRosPkg)
 3) Set your ROS_PACKAGE_PATH to whereever this package is located.
+Note: Depending on how you acquired this package, you may have to rename the folder containing everything to "WAMPy".
  e.g. if it's in /home/userjoe/ros_packages/WAMPy/ then
 	a) Open up your bashrc file (located at ~/.bashrc)
 	b) add "export ROS_PACKAGE_PATH = $ROS_PACKAGE_PATH:/home/userjoe/ros_packages/" to the end.
 	c) Close the terminal and open again.
 4) build the package by typing "rosmake WAMPy"
+5) If you want to be able to run the WAMPy.py script using rosrun, you'll need to go to the folder containing WAMPy.py and run "chmod 777 WAMPy.py".
 
 Use:
 1) Have ROS running. Open a terminal and run "roscore".
