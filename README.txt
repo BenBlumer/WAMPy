@@ -43,7 +43,7 @@ Installation:
 
 Use:
 1) Have ROS running. Open a terminal and run "roscore".
-2) You must have the WAM node running. IF you've correctly installed BarrettRos package, in a separate terminal, type "roslaunch wam_node wam_node".
+2) You must have the WAM node running. IF you've correctly installed BarrettRos package, in a separate terminal, type "rosrun wam_node wam_node".
 3) I've included functions that expose a lot of the BarrettRos functionality. They're described in detail in the docstrings in the code. You can simply write your code under "if __name__ == "__main__" in WAMPy.py, or you can import the code as a module, or you can copy and paste functions into your own code (under, and only under, the terms of the GPLV3 license).
 
 To move to a certain joint position: I recomend using the move_wam_from_current_location() function. This interpolates between the WAM's current joint coordinates and whatever joint coordinates you specify in the amount of time you specify. The first argument is a 7-long list containing the final joint coordinates. The second argument is the duration the trajectory should last. If you try to make it happen to quickly, the WAM may exceed its velocity limits and shut down. The final argument is the frequency at which WAMPy should send the message to wam_node. 500 is the default and what it should remain at.
