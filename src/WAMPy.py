@@ -35,6 +35,22 @@ def get_wam_joint_coordinates():
     msg = rospy.wait_for_message('/wam/joint_states', JointState)
     return list(msg.position)
 
+
+def set_wam_joint_hold(hold):
+    """Turn on/off the joint lock so you can manipulate the WAM by hand.
+    args:
+      hold: True if you want the WAM to maintain its joint pose. False
+        if you want to be able to move it by hand.
+    """
+    msg = HoldRequest()
+    msg.hold = hold
+    wam_hold_service = rospy.ServiceProxy('/wam/hold_joint_pos', Hold)
+    try:
+        resp1 = wam_hold_service(msg)
+    except rospy.ServiceException as exc:
+        print("Service did not process request: " + str(exc))
+        
+    
 def create_joint_trajectory(start_position, end_position,
                              duration_of_trajectory, frequency_of_trajectory):
     """
