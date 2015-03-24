@@ -73,7 +73,7 @@ def create_joint_trajectory(start_position, end_position,
     returns:
       trajectory: an N * 7 numpy array of joint coordinates.
       vel_lims: the joint velocities required to perform trajectory.
-        v1 = abs((p2 - p1) * 500). The last velocity, vn, is set equal to v(n-1)
+        v1 = abs((p2 - p1) * 250). The last velocity, vn, is set equal to v(n-1)
         The absolute value is required for the WAM. Even if it's traveling in
         the negative direction, a positive value should be used.
     """
@@ -103,7 +103,7 @@ def create_joint_trajectory(start_position, end_position,
     return trajectory, vel_lims
 
 
-def send_joint_trajectory(trajectory, velocities, frequency=500):
+def send_joint_trajectory(trajectory, velocities, frequency=250):
     """
     This is used to send a trajectory to the WAM arm at a given frequency.
 
@@ -142,7 +142,7 @@ def send_joint_trajectory(trajectory, velocities, frequency=500):
             finished = True
         r.sleep()
 
-def create_and_send_wam_trajectory(wam_start, wam_end, duration, frequency=500):
+def create_and_send_wam_trajectory(wam_start, wam_end, duration, frequency=250):
     """ Create and send a trajectory that's a linear interpolation between
     wam_start and wam_end that lasts duration seconds send at frequency.
 
@@ -151,7 +151,7 @@ def create_and_send_wam_trajectory(wam_start, wam_end, duration, frequency=500):
       wam_end: a 1x7 array of joint coordinates.
       duration: A float. The duration of the trajectory in seconds.
       frequency: The frequency of values. With the default, a new position is
-        specified for every 0.002 seconds. 500 Hz is what wam_node is expecting.
+        specified for every 0.004 seconds. 250 Hz is what wam_node is expecting.
 
     returns:
       None
@@ -162,7 +162,7 @@ def create_and_send_wam_trajectory(wam_start, wam_end, duration, frequency=500):
     send_joint_trajectory(joint_traj, joint_vels, frequency)
 
 
-def move_wam_from_current_location(wam_end, duration, frequency=500):
+def move_wam_from_current_location(wam_end, duration, frequency=250):
     """ Create and send a trajectory that's a linear interpolation between
     where the wam currently is and wam_end that lasts duration seconds.
     Publishes the trajectory at frequency Hz.
@@ -171,7 +171,7 @@ def move_wam_from_current_location(wam_end, duration, frequency=500):
       wam_end: a 1x7 array of joint coordinates.
       duration: A float. The duration of the trajectory in seconds.
       frequency: The frequency of values. With the default, a new position is
-        specified for every 0.002 seconds. 500 Hz is what wam_node is expecting.
+        specified for every 0.004 seconds. 250 Hz is what wam_node is expecting.
 
     returns:
       None
@@ -289,14 +289,14 @@ if __name__ == "__main__":
 
 
 
-    move_wam_from_current_location(wam_home, 2, 500)
+    move_wam_from_current_location(wam_home, 2, 250)
 
-    move_wam_from_current_location(experiment_home_point, 2, 500)
-    move_wam_from_current_location(experiment_pickup_point, 2, 500)
+    move_wam_from_current_location(experiment_home_point, 2, 250)
+    move_wam_from_current_location(experiment_pickup_point, 2, 250)
     close_wam_hand()
-    move_wam_from_current_location(experiment_dropoff_point, 2, 500)
+    move_wam_from_current_location(experiment_dropoff_point, 2, 250)
     open_wam_hand()
-    move_wam_from_current_location(experiment_home_point, 2, 500)
+    move_wam_from_current_location(experiment_home_point, 2, 250)
     close_wam_hand_spread()
-    move_wam_from_current_location(wam_home, 2, 500)
+    move_wam_from_current_location(wam_home, 2, 250)
 
